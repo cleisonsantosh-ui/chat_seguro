@@ -566,32 +566,31 @@
 
     async function run() {
 
-      /* ── ETAPA 1 — ABERTURA ── */
-      await wait(900);
-      await showTyping(900);
-      addMsg("psiu");
+      /* ── ETAPA 1 — ABERTURA REALISTA ── */
+      await wait(400); 
+      await showTyping(800);
+      addMsg("oie");
 
-      await wait(1600);
+      await wait(1200);
       await showTyping(700);
-      addMsg("vc tá aí? 👀");
+      addMsg("vc ainda tá aí? 👀");
+
+      await wait(1500);
+      await showTyping(1000);
+      addMsg("achei que já tinha fechado a página kkk");
 
       await wait(1800);
-      await showTyping(1300);
-      addMsg("fica um segundo antes de fechar isso aqui");
-
-      /* ─ Micro-compromisso 1 ─ */
-      await wait(2000);
-      await showTyping(1600);
-      addMsg("me responde uma coisa...");
+      await showTyping(1200);
+      addMsg("antes de vc ir, deixa eu te perguntar uma coisa rápida...");
 
       await wait(1400);
       await showTyping(1500);
-      addMsg("vc prefere qualidade ou prefere aquelas que jogam tudo pra qualquer um? 👀");
+      addMsg("vc é um cara mais exigente com o que vê, ou pra vc tanto faz? kkk");
 
       await wait(800);
       showButtons([
-        { label: "🔥 qualidade, claro", fn: stepQualidade },
-        { label: "🤔 depende...", cls: "btn-alt", fn: stepQualidade }
+        { label: "sou bem exigente 😏", fn: stepQualidade },
+        { label: "depende do que vc mostrar kkk", cls: "btn-alt", fn: stepQualidade }
       ]);
     }
 
