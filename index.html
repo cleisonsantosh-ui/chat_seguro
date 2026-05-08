@@ -14,7 +14,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18074797539"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'AW-18074797539');
@@ -22,18 +22,18 @@
 
   <!-- Event snippet for Contato HOT conversion page -->
   <script>
-  function gtag_report_conversion(url) {
-    var callback = function () {
-      if (typeof(url) != 'undefined') {
-        window.location = url;
-      }
-    };
-    gtag('event', 'conversion', {
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof (url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
         'send_to': 'AW-18074797539/IByZCLOIjpscEOOL3qpD',
         'event_callback': callback
-    });
-    return false;
-  }
+      });
+      return false;
+    }
   </script>
 
   <!-- Fonts -->
@@ -44,11 +44,11 @@
 
   <!-- Microsoft Clarity -->
   <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "wl5h9iilpu");
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "wl5h9iilpu");
   </script>
 
   <style>
@@ -567,59 +567,96 @@
 
     /* ════════════════════════════════════════════════════════
        FLUXO PRINCIPAL — SOFIA NEVES
-       v2.0 | Conversão Máxima | Sem Áudio
-       Estratégia: Pattern Interrupt → Micro-compromisso →
-                   Escalada de desejo → Ancoragem de preço →
-                   Urgência real → Loop de recuperação duplo
+       v3.0 | Conversão Máxima | Funil Otimizado
+       Estratégia: Qualificação (casado/solteiro) →
+                   Desafio/provocação → Escalada de desejo →
+                   Fechamento no Zap → Recovery agressivo
     ════════════════════════════════════════════════════════ */
 
     async function run() {
 
-      /* ── ETAPA 1 — ABERTURA REALISTA ── */
-      await wait(400); 
+      /* ── ETAPA 1 — ABERTURA + QUALIFICAÇÃO ── */
+      await wait(400);
       await showTyping(800);
-      addMsg("oie");
+      addMsg("oie 😊");
 
       await wait(1200);
-      await showTyping(700);
-      addMsg("vc ainda tá aí? 👀");
-
-      await wait(1500);
-      await showTyping(1000);
-      addMsg("achei que já tinha fechado a página kkk");
-
-      await wait(1800);
-      await showTyping(1200);
-      addMsg("antes de vc ir, deixa eu te perguntar uma coisa rápida...");
+      await showTyping(900);
+      addMsg("antes de começar me fala uma coisa...");
 
       await wait(1400);
-      await showTyping(1500);
-      addMsg("vc é um cara mais exigente com o que vê, ou pra vc tanto faz? kkk");
+      await showTyping(1200);
+      addMsg("você é casado ou solteiro? 👀");
 
       await wait(800);
       showButtons([
-        { label: "sou bem exigente 😏", fn: stepQualidade },
-        { label: "depende do que vc mostrar kkk", cls: "btn-alt", fn: stepQualidade }
+        { label: "🪢 sou casado", fn: stepCasado },
+        { label: "😎 sou solteiro", cls: "btn-alt", fn: stepSolteiro }
       ]);
     }
 
-    /* ── IDENTIDADE + AUTORIDADE ── */
-    async function stepQualidade() {
+    /* ── REAÇÃO CASADO ── */
+    async function stepCasado() {
+      await wait(800);
+      await showTyping(1100);
+      addMsg("ahh então precisa de um segredinho né 😏");
+
+      await wait(1600);
+      await showTyping(1200);
+      addMsg("relaxa... aqui é só entre a gente 🔐");
+
+      await wait(1400);
+      await stepIdentidade();
+    }
+
+    /* ── REAÇÃO SOLTEIRO ── */
+    async function stepSolteiro() {
+      await wait(800);
+      await showTyping(1100);
+      addMsg("ahhh solteiro... então tá sem desculpa né 😈");
+
+      await wait(1600);
+      await showTyping(1200);
+      addMsg("melhor ainda... posso ser mais honesta com vc então 🖤");
+
+      await wait(1400);
+      await stepIdentidade();
+    }
+
+    /* ── ETAPA 2 — IDENTIDADE + DESAFIO (2C) ── */
+    async function stepIdentidade() {
       await wait(1000);
-      await showTyping(1000);
-      addMsg("ahhh então vc veio pro lugar certo 😏");
+      await showTyping(1300);
+      addMsg("olha... vou ser honesta.");
 
-      await wait(1800);
+      await wait(1600);
       await showTyping(1400);
-      addMsg("eu sou a sofia");
-
-      await wait(1500);
-      await showTyping(1600);
-      addMsg("o que aparece nas redes é só 10% do que eu sou de verdade 🖤");
+      addMsg("a maioria dos homens não aguentaria ver o que eu tenho aqui 😈");
 
       await wait(1800);
-      await showTyping(900);
-      addMsg("olha isso aqui 👇");
+      await showTyping(1500);
+      addMsg("será que vc aguentaria? 👀");
+
+      await wait(800);
+      showButtons([
+        { label: "😈 acho que sim", fn: stepPreFoto },
+        { label: "depende do que vc tem kkk", cls: "btn-alt", fn: stepPreFoto }
+      ]);
+    }
+
+    /* ── ETAPA 3 — PRÉ-FOTO ── */
+    async function stepPreFoto() {
+      await wait(800);
+      await showTyping(1000);
+      addMsg("tá bom... então vai encarar 😏");
+
+      await wait(1600);
+      await showTyping(1100);
+      addMsg("vou te mandar algo que eu quase não mostro pra ninguém 🫣");
+
+      await wait(1800);
+      await showTyping(1300);
+      addMsg("essa daqui eu tava com vergonha de postar... resolvi guardar só pro privado");
 
       /* ── FOTO 1 ── */
       await wait(1200);
@@ -627,19 +664,15 @@
 
       await wait(2200);
       await showTyping(1000);
-      addMsg("essa ainda é a versão comportada viu 😅");
+      addMsg("essa ainda é a versão... digamos... comportada 😅");
 
       await wait(1800);
       await showTyping(1400);
-      addMsg("no meu álbum privado... é bem diferente");
-
-      await wait(1600);
-      await showTyping(1200);
-      addMsg("posso te mandar? 🥺");
+      addMsg("posso te mostrar como fica quando eu não to me segurando? 🥺");
 
       await wait(800);
       showButtons([
-        { label: "👀 manda sim", fn: sendPrevias },
+        { label: "🔥 quero ver", fn: sendPrevias },
         { label: "agora não", cls: "btn-alt", fn: flowNao1 }
       ]);
     }
@@ -678,57 +711,27 @@
       await showTyping(900);
       addMsg("e nunca vou postar 🙈");
 
-      /* ── PREÇO + PROVA SOCIAL ── */
+      /* ── ETAPA 4 — FECHAR PARA O ZAP ── */
       await wait(2000);
       await showTyping(1400);
-      addMsg("olha... hoje uns 40 me pediram acesso");
+      addMsg("olha... to com vontade de te mandar mais mas fica estranho mandar aqui né 🙈");
 
       await wait(1800);
-      await showTyping(1100);
-      addMsg("mas eu não libero pra todo mundo não");
-
-      await wait(1600);
-      await showTyping(1300);
-      addMsg("vc chegou até aqui né... então eu já sei que vc é diferente 🖤");
-
-      await wait(2000);
-      await showTyping(1500);
-      addMsg("no álbum tem muito mais foto, vídeo...");
-
-      await wait(1600);
       await showTyping(1200);
-      addMsg("coisa que eu mando só por lá mesmo");
+      addMsg("me chama no zap, te passo a tabela e vc decide qual quer 🔥");
 
       await wait(1600);
-      await showTyping(1000);
-      addMsg("tudo isso por <strong>R$14 no pix</strong> 💸");
-
-      /* ── ANCORAGEM ── */
-      await wait(1800);
-      await showTyping(1400);
-      addMsg("R$14 é menos que um cigarro");
+      await showTyping(1100);
+      addMsg("só que quando eu sentir que tá cheio eu fecho sem avisar 🔐");
 
       await wait(1400);
-      await showTyping(1000);
-      addMsg("menos que um café com leite no shopping 😏");
-
-      /* ── URGÊNCIA ── */
-      await wait(1800);
-      await showTyping(1300);
-      addMsg("só que...");
-
-      await wait(1400);
-      await showTyping(1400);
-      addMsg("quando eu sentir que tá cheio eu fecho o acesso sem avisar 🔐");
-
-      await wait(1600);
-      await showTyping(1000);
-      addMsg("entra agora enquanto ainda dá? 🥺");
+      await showTyping(900);
+      addMsg("corre enquanto ainda dá? 🥺");
 
       await wait(800);
       showButtons([
-        { label: "✅ quero entrar agora!", fn: flowSim },
-        { label: "😔 não tenho agora", cls: "btn-alt", fn: flowNao2 }
+        { label: "✅ quero agora!", fn: flowSim },
+        { label: "😔 agora não posso", cls: "btn-alt", fn: flowNao2 }
       ]);
     }
 
@@ -736,23 +739,23 @@
     async function flowSim() {
       await wait(700);
       await showTyping(900);
-      addMsg("aiii 😍");
+      addMsg("AIIII 😍🔥");
 
-      await wait(1400);
+      await wait(1200);
       await showTyping(1000);
-      addMsg("eu sabia que vc era diferente");
+      addMsg("eu sabia que vc era diferente desde que chegou aqui 🖤");
 
       await wait(1600);
       await showTyping(1300);
-      addMsg("me chama no whatsapp agora");
-
-      await wait(1400);
-      await showTyping(1100);
-      addMsg("te passo o pix e já libero teu acesso na hora 🔐");
+      addMsg("corre me chama no zap AGORA 👇");
 
       await wait(1200);
+      await showTyping(1100);
+      addMsg("lá eu te mando a tabela e a gente resolve rapidinho 🔥");
+
+      await wait(1000);
       await showTyping(800);
-      addMsg("te espero lá 💋");
+      addMsg("te espero lá com tudo separado pra vc 💋");
 
       await wait(900);
       showButtons([
@@ -763,7 +766,7 @@
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                   </svg>
                   💬 Chamar a Sofia agora`,
-          url: 'https://wa.me/5545991294729?text=Oi%20Sofia%2C%20tudo%20bem%3F%20Quero%20ter%20acesso%20ao%20seu%20%C3%A1lbum%20privado%20agora!%20Quero%20aproveitar%20que%20ainda%20tem%20vaga%20%F0%9F%98%88'
+          url: 'https://wa.me/5563992481667?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20Packs'
         }
       ]);
     }
@@ -771,32 +774,24 @@
     /* ── RECOVERY 1 — antes de ver as prévias ── */
     async function flowNao1() {
       await wait(1000);
-      await showTyping(900);
-      addMsg("tudo bem 😊");
+      await showTyping(1000);
+      addMsg("espera... vai fechar sem nem ver? 👀");
 
       await wait(1600);
-      await showTyping(1200);
-      addMsg("mas fica isso na cabeça...");
-
-      await wait(1800);
       await showTyping(1300);
-      addMsg("aquela foto que vc viu agora é a mais inocente que eu tenho 😅");
+      addMsg("vc acabou de ver a foto mais inocente que eu tenho 😅");
 
       await wait(1800);
       await showTyping(1400);
-      addMsg("o que tá no álbum privado...");
-
-      await wait(1200);
-      await showTyping(1000);
-      addMsg("nunca postei e nunca vou postar em lugar nenhum 🙈");
+      addMsg("o que tá no pack privado vai bem além disso 🔥");
 
       await wait(1600);
       await showTyping(1100);
-      addMsg("vc tem certeza que não quer ver? 👀");
+      addMsg("pelo menos dá uma olhada antes de ir... mando mais uma? 🥺");
 
       await wait(800);
       showButtons([
-        { label: "🔥 tá bom, me mostra", fn: sendPrevias },
+        { label: "🔥 tá bom, manda", fn: sendPrevias },
         { label: "pode fechar", cls: "btn-alt", fn: flowEncerra }
       ]);
     }
@@ -805,36 +800,32 @@
     async function flowNao2() {
       await wait(900);
       await showTyping(1000);
-      addMsg("tá...");
+      addMsg("hmm... entendo");
 
       await wait(1500);
+      await showTyping(1300);
+      addMsg("mas vc acabou de ver... e sabe o que tem no pack 😏");
+
+      await wait(1800);
       await showTyping(1200);
-      addMsg("mas vc acabou de ver né");
+      addMsg("eu não vou ficar te convencendo não 😅");
+
+      await wait(1400);
+      await showTyping(1100);
+      addMsg("mas quando fechar essa aba vai ficar com aquilo na cabeça kkk");
 
       await wait(1600);
-      await showTyping(1100);
-      addMsg("e sabe que por R$14 teria tudo aquilo, mais muito mais do que eu mostrei...");
-
-      await wait(1800);
-      await showTyping(1000);
-      addMsg("R$14 é o que vc gasta num lanche que vc esquece no mesmo dia 😏");
-
-      await wait(1800);
-      await showTyping(1300);
-      addMsg("e olha...");
+      await showTyping(1200);
+      addMsg("e quando quiser voltar pode não ter mais vaga 🔐");
 
       await wait(1200);
-      await showTyping(1400);
-      addMsg("se vc fechar agora pode ser que quando voltar não tenha mais vaga 🔐");
-
-      await wait(1600);
       await showTyping(1000);
-      addMsg("garante agora? 🥺");
+      addMsg("última chance agora? 🥺🔥");
 
       await wait(800);
       showButtons([
-        { label: "✅ garanto agora!", fn: flowSim },
-        { label: "não quero", cls: "btn-alt", fn: flowEncerra }
+        { label: "✅ tá bom, vou entrar!", fn: flowSim },
+        { label: "não quero mesmo", cls: "btn-alt", fn: flowEncerra }
       ]);
     }
 
@@ -842,15 +833,24 @@
     async function flowEncerra() {
       await wait(1200);
       await showTyping(1000);
-      addMsg("tudo bem, sem pressão 😊");
+      addMsg("tudo bem 😊 sem pressão aqui");
 
       await wait(1800);
-      await showTyping(1000);
-      addMsg("se mudar de ideia o link tá aqui");
+      await showTyping(1200);
+      addMsg("mas se mudar de ideia... o zap tá sempre aberto 😏💋");
 
-      await wait(1600);
-      await showTyping(700);
-      addMsg("beijo 💋");
+      await wait(1400);
+      showButtons([
+        {
+          type: 'link',
+          cls: 'btn-wa',
+          label: `<svg viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                  💬 Chamar a Sofia`,
+          url: 'https://wa.me/5563992481667?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20Packs'
+        }
+      ]);
     }
 
     /* Inicia */
